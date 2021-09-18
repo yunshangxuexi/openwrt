@@ -21,9 +21,7 @@ sensitive filesystem required).
 ### Requirements
 
 You need the following tools to compile OpenWrt, the package names vary between
-distributions. A complete list with distribution specific packages is found in
-the [Build System Setup](https://openwrt.org/docs/guide-developer/build-system/install-buildsystem)
-documentation.
+distributions.
 
 ```
 sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch python3 python2.7 unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler g++-multilib antlr3 gperf wget curl swig rsync
@@ -40,9 +38,10 @@ sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git
 3. Run `make menuconfig` to select your preferred configuration for the
    toolchain, target system & firmware packages.
 
-4. Run `make` to build your firmware. This will download all sources, build the
+4. Run `make V=s -j4` to build your firmware. This will download all sources, build the
    cross-compile toolchain and then cross-compile the GNU/Linux kernel & all chosen
    applications for your target system.
+   
 
 ### Related Repositories
 
@@ -76,11 +75,6 @@ For a list of supported devices see the [OpenWrt Hardware Database](https://open
 * [Forum](https://forum.openwrt.org): For usage, projects, discussions and hardware advise.
 * [Support Chat](https://webchat.oftc.net/#openwrt): Channel `#openwrt` on **oftc.net**.
 
-### Developer Community
-
-* [Bug Reports](https://bugs.openwrt.org): Report bugs in OpenWrt
-* [Dev Mailing List](https://lists.openwrt.org/mailman/listinfo/openwrt-devel): Send patches
-* [Dev Chat](https://webchat.oftc.net/#openwrt-devel): Channel `#openwrt-devel` on **oftc.net**.
 
 ## License
 
